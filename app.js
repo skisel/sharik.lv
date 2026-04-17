@@ -229,8 +229,8 @@ function applyStaticCopy() {
   els.heroPhoneNumber.textContent = data.business.phoneDisplay;
   els.heroPrimaryLink.textContent = t("heroPrimary");
   els.heroSecondaryLink.textContent = t("heroSecondary");
-  els.popularLabel.textContent = t("popularLabel");
-  els.popularLink.textContent = t("popularLink");
+  if (els.popularLabel) els.popularLabel.textContent = t("popularLabel");
+  if (els.popularLink) els.popularLink.textContent = t("popularLink");
   els.servicesEyebrow.textContent = t("servicesEyebrow");
   els.servicesTitle.textContent = t("servicesTitle");
   els.galleryEyebrow.textContent = t("galleryEyebrow");
@@ -274,6 +274,7 @@ function applyStaticCopy() {
 }
 
 function renderSpotlight() {
+  if (!els.spotlightGrid) return;
   els.spotlightGrid.innerHTML = groupOrder
     .filter((group) => group !== "all")
     .map((group) => {
