@@ -44,6 +44,8 @@ const copy = {
     lightboxClose: "Aizvērt attēlu",
     lightboxPrev: "Iepriekšējais attēls",
     lightboxNext: "Nākamais attēls",
+    portraitName: "Jurijs Kisels",
+    portraitRole: "Balonu dekoru meistars",
   },
   ru: {
     pageTitle: "Юрий Кисель Оформление шарами",
@@ -88,6 +90,8 @@ const copy = {
     lightboxClose: "Закрыть изображение",
     lightboxPrev: "Предыдущее изображение",
     lightboxNext: "Следующее изображение",
+    portraitName: "Юрий Кисель",
+    portraitRole: "Мастер оформления шарами",
   },
 };
 
@@ -124,6 +128,8 @@ const els = {
   popularLabel: document.getElementById("popularLabel"),
   popularLink: document.getElementById("popularLink"),
   spotlightGrid: document.getElementById("spotlightGrid"),
+  portraitName: document.getElementById("portraitName"),
+  portraitRole: document.getElementById("portraitRole"),
   servicesEyebrow: document.getElementById("servicesEyebrow"),
   servicesTitle: document.getElementById("servicesTitle"),
   groupCards: document.getElementById("groupCards"),
@@ -231,6 +237,8 @@ function applyStaticCopy() {
   els.heroSecondaryLink.textContent = t("heroSecondary");
   if (els.popularLabel) els.popularLabel.textContent = t("popularLabel");
   if (els.popularLink) els.popularLink.textContent = t("popularLink");
+  els.portraitName.textContent = t("portraitName");
+  els.portraitRole.textContent = t("portraitRole");
   els.servicesEyebrow.textContent = t("servicesEyebrow");
   els.servicesTitle.textContent = t("servicesTitle");
   els.galleryEyebrow.textContent = t("galleryEyebrow");
