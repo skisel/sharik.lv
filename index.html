@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="lv">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jura Kisel Balonu Dekori</title>
+    <meta id="metaDescription" name="description" content="Balonu dekori kāzām, svētkiem, fotosesijām un tematiskiem pasākumiem." />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="hero">
+        <nav class="topbar">
+          <a class="brand" href="#top">
+            <span class="brand-mark">JK</span>
+            <span>
+              <strong>Jura Kisel</strong>
+              <em id="brandTagline">Balonu dekori</em>
+            </span>
+          </a>
+          <div class="topbar-actions">
+            <div class="lang-switch" aria-label="Language switcher">
+              <button class="lang-button active" data-lang="lv" type="button">LV</button>
+              <button class="lang-button" data-lang="ru" type="button">RU</button>
+            </div>
+            <a class="ghost-link" id="navGalleryLink" href="#gallery">Skatīt piemērus</a>
+            <a class="cta-link phone-cta" id="phoneLink" href="tel:+37129536652">
+              <span class="phone-cta-label" id="phoneCtaLabel">Zvaniet tagad</span>
+              <strong class="phone-cta-number" id="phoneCtaNumber">+371 29536652</strong>
+            </a>
+          </div>
+        </nav>
+
+        <div class="hero-layout" id="top">
+          <section class="hero-copy reveal">
+            <p class="eyebrow" id="heroEyebrow">Balonu dekori kāzām, svētkiem, atklāšanām un fotosesijām</p>
+            <h1 id="heroTitle">Noformējums, ko cilvēki fotografē jau pie ieejas.</h1>
+            <p class="hero-text" id="heroIntro">
+              Jura Kisel veido balonu kompozīcijas, tematiskas figūras un svētku dekorus dažādiem pasākumiem.
+            </p>
+            <a class="hero-phone" id="heroPhoneLink" href="tel:+37129536652">
+              <span class="hero-phone-label" id="heroPhoneLabel">Galvenais kontakts</span>
+              <strong class="hero-phone-number" id="heroPhoneNumber">+371 29536652</strong>
+            </a>
+            <div class="hero-actions">
+              <a class="button button-primary" id="heroPrimaryLink" href="#gallery">Atvērt galeriju</a>
+              <a class="button button-secondary" id="heroSecondaryLink" href="#contact">Sazināties</a>
+            </div>
+            <dl class="hero-stats" id="heroStats"></dl>
+          </section>
+
+          <aside class="hero-panel reveal">
+            <div class="hero-panel-head">
+              <p id="popularLabel">Populārākie virzieni</p>
+              <a id="popularLink" href="#gallery">Skatīt visus albumus</a>
+            </div>
+            <div class="spotlight-grid" id="spotlightGrid"></div>
+          </aside>
+        </div>
+      </header>
+
+      <main>
+        <section class="service-strip reveal">
+          <div class="section-heading">
+            <p class="eyebrow" id="servicesEyebrow">Ko Jura piedāvā</p>
+            <h2 id="servicesTitle">Ātrs veids, kā atrast vajadzīgos piemērus</h2>
+          </div>
+          <div class="service-cards" id="groupCards"></div>
+        </section>
+
+        <section class="gallery-section reveal" id="gallery">
+          <div class="section-heading gallery-heading">
+            <div>
+              <p class="eyebrow" id="galleryEyebrow">Piemēru arhīvs</p>
+              <h2 id="galleryTitle">Izvēlieties pasākuma veidu un atveriet pilnu albumu</h2>
+            </div>
+            <label class="search-field">
+              <span id="searchLabel">Meklēt albumos</span>
+              <input id="searchInput" type="search" placeholder="Kāzas, figūras, arkas..." />
+            </label>
+          </div>
+
+          <div class="gallery-layout">
+            <aside class="gallery-sidebar">
+              <div class="sidebar-card">
+                <p class="sidebar-title" id="filtersTitle">Filtri</p>
+                <div class="filter-list" id="filterList"></div>
+              </div>
+              <div class="sidebar-card">
+                <p class="sidebar-title" id="howToTitle">Kā lietot galeriju</p>
+                <ul class="sidebar-list" id="howToList">
+                  <li>Izvēlieties kategoriju, lai sašaurinātu piemērus.</li>
+                  <li>Atveriet albumu, lai redzētu pilnu foto kopu.</li>
+                  <li>Noklikšķiniet uz attēla, lai atvērtu to pilnā izmērā.</li>
+                </ul>
+              </div>
+            </aside>
+
+            <div class="gallery-main">
+              <div class="album-grid" id="albumGrid"></div>
+
+              <article class="album-viewer" id="albumViewer">
+                <div class="album-viewer-head">
+                  <div>
+                    <p class="eyebrow" id="viewerGroup"></p>
+                    <h3 id="viewerTitle">Izvēlieties albumu</h3>
+                    <p class="viewer-subtitle" id="viewerSubtitle">
+                      Atveriet albuma kartīti, lai apskatītu pilnu piemēru kopu.
+                    </p>
+                  </div>
+                  <button class="button button-secondary compact" id="viewerMoreButton" type="button">
+                    Rādīt vēl
+                  </button>
+                </div>
+                <div class="viewer-grid" id="viewerGrid"></div>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="contact-section reveal" id="contact">
+          <div class="contact-card">
+            <div>
+              <p class="eyebrow" id="contactEyebrow">Sazināties ar Juru Kiselu</p>
+              <h2 id="contactTitle">Vajag ideju vai noformējumu jūsu pasākumam?</h2>
+              <p id="contactIntro">
+                Izvēlieties piemērus galerijā un sazinieties ar Juru, lai apspriestu datumu, vietu un vēlamo stilu.
+              </p>
+            </div>
+            <div class="contact-actions">
+              <a class="button button-primary" id="contactPhoneLink" href="tel:+37129536652">+371 29536652</a>
+              <a class="button button-secondary" id="contactGalleryLink" href="#gallery">Vispirms apskatīt piemērus</a>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <dialog class="lightbox" id="lightbox">
+      <button class="lightbox-close" id="lightboxClose" type="button" aria-label="Close gallery image">×</button>
+      <button class="lightbox-nav prev" id="lightboxPrev" type="button" aria-label="Previous image">‹</button>
+      <figure class="lightbox-figure">
+        <img id="lightboxImage" alt="" />
+        <figcaption id="lightboxCaption"></figcaption>
+      </figure>
+      <button class="lightbox-nav next" id="lightboxNext" type="button" aria-label="Next image">›</button>
+    </dialog>
+
+    <script src="gallery-data.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
