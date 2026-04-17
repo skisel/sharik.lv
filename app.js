@@ -104,6 +104,7 @@ const state = {
 const groupOrder = ["all", "weddings", "figures", "launches", "surprises", "ideas"];
 
 const els = {
+  topbar: document.querySelector(".topbar"),
   metaDescription: document.getElementById("metaDescription"),
   brandName: document.getElementById("brandName"),
   brandTagline: document.getElementById("brandTagline"),
@@ -135,6 +136,7 @@ const els = {
   howToList: document.getElementById("howToList"),
   filterList: document.getElementById("filterList"),
   albumGrid: document.getElementById("albumGrid"),
+  albumViewer: document.getElementById("albumViewer"),
   viewerGroup: document.getElementById("viewerGroup"),
   viewerTitle: document.getElementById("viewerTitle"),
   viewerSubtitle: document.getElementById("viewerSubtitle"),
@@ -409,6 +411,15 @@ function renderAll() {
   renderViewer();
 }
 
+function scrollToSection(element) {
+  if (!element) {
+    return;
+  }
+  const topbarHeight = els.topbar ? els.topbar.getBoundingClientRect().height : 0;
+  const top = element.getBoundingClientRect().top + window.scrollY - topbarHeight - 20;
+  window.scrollTo({ top: Math.max(0, top), behavior: "smooth" });
+}
+
 function selectGroup(group) {
   state.activeGroup = group;
   state.viewerLimit = 18;
@@ -482,13 +493,14 @@ function attachEvents() {
     const groupTarget = event.target.closest("[data-group-target]");
     if (groupTarget) {
       selectGroup(groupTarget.dataset.groupTarget);
-      document.getElementById("gallery").scrollIntoView({ behavior: "smooth", block: "start" });
+      requestAnimationFrame(() => scrollToSection(els.albumGrid));
       return;
     }
 
     const albumCard = event.target.closest("[data-album]");
     if (albumCard) {
       selectAlbum(albumCard.dataset.album);
+      requestAnimationFrame(() => scrollToSection(els.albumViewer));
       return;
     }
 
@@ -508,6 +520,17 @@ function attachEvents() {
   els.viewerMoreButton.addEventListener("click", () => {
     state.viewerLimit += 18;
     renderViewer();
+  });
+
+  els.lightbox.addEventListener("click", (event) => {
+    if (event.target === els.lightbox) {
+      els.lightbox.close();
+    }
+  });
+
+  els.lightbox.addEventListener("cancel", (event) => {
+    event.preventDefault();
+    els.lightbox.close();
   });
 
   els.lightboxClose.addEventListener("click", () => els.lightbox.close());
