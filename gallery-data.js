@@ -562,9 +562,9 @@ window.GALLERY_DATA = {
       "nativeTitle": "Арки",
       "pathLabel": {
         "lv": "Ideju galerija / Kāzu idejas / Arkas",
-        "ru": "Шарики-идеи интернета / Украшение свадеб - идеи инт / Арки"
+        "ru": "Галерея идей / Свадебные идеи / Арки"
       },
-      "group": "weddings",
+      "group": "ideas",
       "imageCount": 2,
       "cover": "gallery-assets/ideju-galerija-kazu-idejas-arkas/001.jpg",
       "images": [
@@ -581,9 +581,9 @@ window.GALLERY_DATA = {
       "nativeTitle": "Лебеди",
       "pathLabel": {
         "lv": "Ideju galerija / Kāzu idejas / Gulbji",
-        "ru": "Шарики-идеи интернета / Украшение свадеб - идеи инт / Лебеди"
+        "ru": "Галерея идей / Свадебные идеи / Лебеди"
       },
-      "group": "weddings",
+      "group": "ideas",
       "imageCount": 1,
       "cover": "gallery-assets/ideju-galerija-kazu-idejas-gulbji/001.jpg",
       "images": [
@@ -599,9 +599,9 @@ window.GALLERY_DATA = {
       "nativeTitle": "Общие идеи",
       "pathLabel": {
         "lv": "Ideju galerija / Kāzu idejas / Kopējās idejas",
-        "ru": "Шарики-идеи интернета / Украшение свадеб - идеи инт / Общие идеи"
+        "ru": "Галерея идей / Свадебные идеи / Общие идеи"
       },
-      "group": "weddings",
+      "group": "ideas",
       "imageCount": 14,
       "cover": "gallery-assets/ideju-galerija-kazu-idejas-kopejas-idejas/001.jpg",
       "images": [
@@ -630,9 +630,9 @@ window.GALLERY_DATA = {
       "nativeTitle": "Сердца",
       "pathLabel": {
         "lv": "Ideju galerija / Kāzu idejas / Sirdis",
-        "ru": "Шарики-идеи интернета / Украшение свадеб - идеи инт / Сердца"
+        "ru": "Галерея идей / Свадебные идеи / Сердца"
       },
-      "group": "weddings",
+      "group": "ideas",
       "imageCount": 6,
       "cover": "gallery-assets/ideju-galerija-kazu-idejas-sirdis/001.jpg",
       "images": [
@@ -653,9 +653,9 @@ window.GALLERY_DATA = {
       "nativeTitle": "Украшение улицы",
       "pathLabel": {
         "lv": "Ideju galerija / Kāzu idejas / Āra dekors",
-        "ru": "Шарики-идеи интернета / Украшение свадеб - идеи инт / Украшение улицы"
+        "ru": "Галерея идей / Свадебные идеи / Украшение улицы"
       },
-      "group": "weddings",
+      "group": "ideas",
       "imageCount": 2,
       "cover": "gallery-assets/ideju-galerija-kazu-idejas-ara-dekors/001.jpg",
       "images": [
@@ -672,9 +672,9 @@ window.GALLERY_DATA = {
       "nativeTitle": "Цепочки на потолок",
       "pathLabel": {
         "lv": "Ideju galerija / Kāzu idejas / Griestu virtenes",
-        "ru": "Шарики-идеи интернета / Украшение свадеб - идеи инт / Цепочки на потолок"
+        "ru": "Галерея идей / Свадебные идеи / Цепочки на потолок"
       },
-      "group": "weddings",
+      "group": "ideas",
       "imageCount": 3,
       "cover": "gallery-assets/ideju-galerija-kazu-idejas-griestu-virtenes/001.jpg",
       "images": [
@@ -692,9 +692,9 @@ window.GALLERY_DATA = {
       "nativeTitle": "Шар-сюрприз",
       "pathLabel": {
         "lv": "Ideju galerija / Kāzu idejas / Pārsteiguma balons",
-        "ru": "Шарики-идеи интернета / Украшение свадеб - идеи инт / Шар-сюрприз"
+        "ru": "Галерея идей / Свадебные идеи / Шар-сюрприз"
       },
-      "group": "surprises",
+      "group": "ideas",
       "imageCount": 2,
       "cover": "gallery-assets/ideju-galerija-kazu-idejas-parsteiguma-balons/001.jpg",
       "images": [
