@@ -29,6 +29,11 @@ html {
   scroll-behavior: smooth;
 }
 
+html,
+body {
+  overflow-x: hidden;
+}
+
 body {
   margin: 0;
   font-family: var(--font-body);
@@ -142,6 +147,7 @@ input {
   gap: 12px;
   flex-wrap: wrap;
   align-items: center;
+  min-width: 0;
 }
 
 .lang-switch {
@@ -214,6 +220,7 @@ input {
   font-size: 1.18rem;
   line-height: 1;
   letter-spacing: 0.01em;
+  overflow-wrap: anywhere;
 }
 
 .button-secondary {
@@ -290,6 +297,7 @@ h3 {
   font-family: var(--font-display);
   line-height: 1.08;
   letter-spacing: -0.02em;
+  overflow-wrap: anywhere;
 }
 
 h1 {
@@ -314,6 +322,7 @@ h3 {
 .spotlight-copy p {
   color: var(--muted);
   line-height: 1.55;
+  overflow-wrap: anywhere;
 }
 
 .hero-text {
@@ -345,6 +354,7 @@ h3 {
   font-size: clamp(1.55rem, 2vw, 2.1rem);
   line-height: 1;
   letter-spacing: 0.01em;
+  overflow-wrap: anywhere;
 }
 
 .hero-stats {
@@ -384,6 +394,12 @@ h3 {
   justify-content: space-between;
   gap: 16px;
   align-items: end;
+}
+
+.hero-panel-head > *,
+.section-heading > *,
+.album-viewer-head > * {
+  min-width: 0;
 }
 
 .hero-panel-head {
@@ -558,6 +574,7 @@ h3 {
 .gallery-main {
   display: grid;
   gap: 20px;
+  min-width: 0;
 }
 
 .album-grid {
@@ -574,6 +591,7 @@ h3 {
   overflow: hidden;
   cursor: pointer;
   text-align: left;
+  min-width: 0;
 }
 
 .album-card.selected {
@@ -587,6 +605,7 @@ h3 {
 
 .album-card-body {
   padding: 14px;
+  min-width: 0;
 }
 
 .album-path {
@@ -595,6 +614,7 @@ h3 {
   font-size: 0.76rem;
   text-transform: uppercase;
   letter-spacing: 0.12em;
+  overflow-wrap: anywhere;
 }
 
 .album-meta {
@@ -611,6 +631,7 @@ h3 {
 
 .album-viewer {
   scroll-margin-top: 110px;
+  min-width: 0;
 }
 
 .viewer-grid {

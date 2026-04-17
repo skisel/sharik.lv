@@ -415,9 +415,8 @@ function scrollToSection(element) {
   if (!element) {
     return;
   }
-  const topbarHeight = els.topbar ? els.topbar.getBoundingClientRect().height : 0;
-  const top = element.getBoundingClientRect().top + window.scrollY - topbarHeight - 20;
-  window.scrollTo({ top: Math.max(0, top), behavior: "smooth" });
+  const top = element.getBoundingClientRect().top + window.scrollY - 110;
+  window.scrollTo({ top: Math.max(0, top), left: 0, behavior: "smooth" });
 }
 
 function selectGroup(group) {
