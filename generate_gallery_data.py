@@ -1,12 +1,14 @@
 #!/usr/bin/env python3
 import json
 import re
+import shutil
+import unicodedata
 from pathlib import Path
-from urllib.parse import quote
 
 
 ROOT = Path("downloads/738000 - Jura_kisel-738000")
 OUT = Path("gallery-data.js")
+ASSET_ROOT = Path("gallery-assets")
 
 
 LABELS = {
@@ -75,7 +77,7 @@ GROUPS = {
 
 
 BUSINESS = {
-    "name": "Jura Kisel",
+    "name": {"lv": "Jurijs Kisels", "ru": "Юрий Кисель"},
     "brand": {"lv": "Balonu dekori", "ru": "Оформление шарами"},
     "phoneDisplay": "+371 29536652",
     "phoneLink": "tel:+37129536652",
@@ -84,8 +86,8 @@ BUSINESS = {
         "ru": "Оформление шарами для свадеб, юбилеев, детских праздников, открытий, фотосессий и тематических инсталляций.",
     },
     "metaDescription": {
-        "lv": "Balonu dekori kāzām, svētkiem, fotosesijām un tematiskiem pasākumiem no Jura Kisela.",
-        "ru": "Оформление шарами для свадеб, праздников, фотосессий и тематических мероприятий от Юры Кисела.",
+        "lv": "Balonu dekori kāzām, svētkiem, fotosesijām un tematiskiem pasākumiem no Jurija Kiseļa.",
+        "ru": "Оформление шарами для свадеб, праздников, фотосессий и тематических мероприятий от Юрия Киселя.",
     },
 }
 
@@ -114,13 +116,12 @@ def classify(parts: tuple[str, ...]) -> str:
 def slugify(parts: tuple[str, ...]) -> str:
     tokens = []
     for part in parts:
-        cleaned = re.sub(r"[^\w]+", "-", part.lower(), flags=re.UNICODE).strip("-")
+        localized = label(part, "lv").lower()
+        normalized = unicodedata.normalize("NFKD", localized)
+        ascii_only = normalized.encode("ascii", "ignore").decode("ascii")
+        cleaned = re.sub(r"[^a-z0-9]+", "-", ascii_only).strip("-")
         tokens.append(cleaned or "album")
     return "-".join(tokens)
-
-
-def web_path(path: Path) -> str:
-    return quote(path.as_posix(), safe="/-_.()")
 
 
 def is_valid_image(path: Path) -> bool:
@@ -135,10 +136,18 @@ def build_album(album: Path) -> dict:
     rel = album.relative_to(ROOT)
     parts = rel.parts or ("Главный архив",)
     raw_images = [path for path in sorted(album.glob("*.jpg")) if is_valid_image(path)]
-    images = [web_path(path) for path in raw_images]
+    album_slug = slugify(parts)
+    images = []
+    if raw_images:
+        target_dir = ASSET_ROOT / album_slug
+        target_dir.mkdir(parents=True, exist_ok=True)
+        for index, source_path in enumerate(raw_images, start=1):
+            target_path = target_dir / f"{index:03d}.jpg"
+            shutil.copy2(source_path, target_path)
+            images.append(target_path.as_posix())
     group = classify(parts)
     return {
-        "id": slugify(parts),
+        "id": album_slug,
         "title": {"lv": label(parts[-1], "lv"), "ru": label(parts[-1], "ru")},
         "nativeTitle": parts[-1],
         "pathLabel": {
@@ -147,12 +156,14 @@ def build_album(album: Path) -> dict:
         },
         "group": group,
         "imageCount": len(images),
-        "cover": web_path(raw_images[0]) if raw_images else None,
+        "cover": images[0] if images else None,
         "images": images,
     }
 
 
 def main() -> None:
+    if ASSET_ROOT.exists():
+        shutil.rmtree(ASSET_ROOT)
     albums = []
     for album in [ROOT, *sorted(path for path in ROOT.rglob("*") if path.is_dir())]:
         if list(album.glob("*.jpg")):

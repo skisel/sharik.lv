@@ -2,7 +2,7 @@ const data = window.GALLERY_DATA;
 
 const copy = {
   lv: {
-    pageTitle: "Jura Kisel Balonu Dekori",
+    pageTitle: "Jurijs Kisels Balonu Dekori",
     navGallery: "Skatīt piemērus",
     callNow: "Zvaniet tagad",
     mainContact: "Galvenais kontakts",
@@ -12,7 +12,7 @@ const copy = {
     heroSecondary: "Sazināties",
     popularLabel: "Populārākie virzieni",
     popularLink: "Skatīt visus albumus",
-    servicesEyebrow: "Ko Jura piedāvā",
+    servicesEyebrow: "Ko piedāvā Jurijs Kisels",
     servicesTitle: "Ātrs veids, kā atrast vajadzīgos piemērus",
     galleryEyebrow: "Piemēru arhīvs",
     galleryTitle: "Izvēlieties pasākuma veidu un atveriet pilnu albumu",
@@ -28,7 +28,7 @@ const copy = {
     chooseAlbum: "Izvēlieties albumu",
     chooseAlbumSubtitle: "Atveriet albuma kartīti, lai apskatītu pilnu piemēru kopu.",
     showMore: "Rādīt vēl",
-    contactEyebrow: "Sazināties ar Juru Kiselu",
+    contactEyebrow: "Sazināties ar Juriju Kiselu",
     contactTitle: "Vajag ideju vai noformējumu jūsu pasākumam?",
     contactGallery: "Vispirms apskatīt piemērus",
     allAlbums: "Visi albumi",
@@ -46,7 +46,7 @@ const copy = {
     lightboxNext: "Nākamais attēls",
   },
   ru: {
-    pageTitle: "Jura Kisel Оформление шарами",
+    pageTitle: "Юрий Кисель Оформление шарами",
     navGallery: "Смотреть примеры",
     callNow: "Позвонить сейчас",
     mainContact: "Главный контакт",
@@ -56,7 +56,7 @@ const copy = {
     heroSecondary: "Связаться",
     popularLabel: "Популярные направления",
     popularLink: "Смотреть все альбомы",
-    servicesEyebrow: "Что делает Юра",
+    servicesEyebrow: "Что предлагает Юрий Кисель",
     servicesTitle: "Быстрый способ найти нужные примеры",
     galleryEyebrow: "Архив примеров",
     galleryTitle: "Выберите тип события и откройте полный альбом",
@@ -72,7 +72,7 @@ const copy = {
     chooseAlbum: "Выберите альбом",
     chooseAlbumSubtitle: "Откройте карточку альбома, чтобы посмотреть полный набор примеров.",
     showMore: "Показать ещё",
-    contactEyebrow: "Связаться с Юрой Киселом",
+    contactEyebrow: "Связаться с Юрием Киселем",
     contactTitle: "Нужна идея или оформление шарами для вашего события?",
     contactGallery: "Сначала выбрать примеры",
     allAlbums: "Все альбомы",
@@ -105,6 +105,7 @@ const groupOrder = ["all", "weddings", "figures", "launches", "surprises", "idea
 
 const els = {
   metaDescription: document.getElementById("metaDescription"),
+  brandName: document.getElementById("brandName"),
   brandTagline: document.getElementById("brandTagline"),
   navGalleryLink: document.getElementById("navGalleryLink"),
   phoneLink: document.getElementById("phoneLink"),
@@ -212,6 +213,7 @@ function applyStaticCopy() {
   document.documentElement.lang = state.language;
   document.title = t("pageTitle");
   els.metaDescription.content = data.business.metaDescription[state.language];
+  els.brandName.textContent = data.business.name[state.language];
   els.brandTagline.textContent = data.business.brand[state.language];
   els.navGalleryLink.textContent = t("navGallery");
   els.phoneLink.href = data.business.phoneLink;
